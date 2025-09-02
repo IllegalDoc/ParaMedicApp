@@ -1,8 +1,17 @@
 import { LinearGradient } from "expo-linear-gradient";
+import { Link, useRouter } from "expo-router";
 import { useRef } from "react";
-import { Animated, Image, ScrollView, Text, View } from "react-native";
+import {
+  Animated,
+  Image,
+  Pressable,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 import products from "../assets/data/products";
 export default function Index() {
+  const router = useRouter();
   const scrollY = useRef(new Animated.Value(0)).current;
   const headerOpacity = scrollY.interpolate({
     inputRange: [0, 150],
@@ -14,7 +23,7 @@ export default function Index() {
     outputRange: [1, 0],
     extrapolate: "clamp",
   });
-  const Product = ({ products }) => o;
+
   return (
     <View style={{ flex: 1, height: "100%" }}>
       <LinearGradient
@@ -29,7 +38,9 @@ export default function Index() {
           contentContainerStyle={{ gap: 50 }}
           style={{ flex: 1 }}
           onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { y: scrollY } } },
+            {
+              nativeEvent: { contentOffset: { y: scrollY } },
+            },
           ])}
           scrollEventThrottle={16}
         >
@@ -59,10 +70,48 @@ export default function Index() {
             </Text>
           </View>
           <View style={{ gap: 40 }}>
-            <View>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
               <Text style={{ fontSize: "20", marginLeft: 5 }}>
                 Latest Products :
               </Text>
+              <Link style={{ fontSize: "20", marginRight: 10 }} href={"/"}>
+                See All
+              </Link>
+            </View>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              {products.map((product) => (
+                <Pressable
+                  key={product.id}
+                  style={{ height: 300, width: 300 }}
+                  onPress={() => router.push(`/products/${product.id}`)}
+                >
+                  <Image
+                    style={{ width: "70%", height: "70%", borderRadius: 30 }}
+                    source={{ uri: product.imageUrl }}
+                  />
+                  <View style={{ flex: 1 }}>
+                    <Text>{product.name} </Text>
+                    <Text>{product.price}</Text>
+                  </View>
+                </Pressable>
+              ))}
+            </ScrollView>
+          </View>
+          <View style={{ gap: 40 }}>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
+              <Text style={{ fontSize: "20", marginLeft: 5 }}>
+                Recent Orders :
+              </Text>
+              <Link style={{ fontSize: "20", marginRight: 10 }} href={"/"}>
+                See All
+              </Link>
             </View>
             <ScrollView
               horizontal={true}

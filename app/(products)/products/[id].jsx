@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 import { useState } from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import products from "../../../assets/data/products";
 
 export default function Product() {
@@ -24,16 +24,6 @@ export default function Product() {
         </View>
 
         <View style={{}}>
-          <Image
-            style={{
-              width: 200,
-              height: 300,
-              resizeMode: "stretch",
-              borderRadius: 30,
-              marginRight: 10,
-            }}
-            source={{ uri: product.imageUrl }}
-          />
           <Text style={{}}>Stock Availability: {product.Stock}</Text>
         </View>
       </View>

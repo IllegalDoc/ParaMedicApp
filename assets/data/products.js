@@ -1,9 +1,8 @@
-const products = [
+export const products = [
   {
     id: 1,
     name: "Pansements adhésifs stériles (pack)",
-    category: "Paramedical",
-    subcategory: "Pansements",
+    category: 1,
     price: 387,
     stock: 120,
     image:
@@ -12,8 +11,7 @@ const products = [
   {
     id: 2,
     name: "Bandage élastique (rouleau)",
-    category: "Paramedical",
-    subcategory: "Pansements",
+    category: 1,
     price: 582,
     stock: 75,
     image:
@@ -22,8 +20,7 @@ const products = [
   {
     id: 3,
     name: "Boîte à pansements vintage (élastique)",
-    category: "Paramedical",
-    subcategory: "Pansements",
+    category: 1,
     price: 873,
     stock: 8,
     image:
@@ -32,8 +29,7 @@ const products = [
   {
     id: 4,
     name: "Trousse de premiers secours portable (plastique)",
-    category: "Paramedical",
-    subcategory: "Kits de secours",
+    category: 2,
     price: 3232,
     stock: 42,
     image: "https://m.media-amazon.com/images/I/51BfKzuE2uL._AC_SX569_.jpg",
@@ -41,8 +37,7 @@ const products = [
   {
     id: 5,
     name: "Trousse individuelle de premiers secours (ouverte)",
-    category: "Paramedical",
-    subcategory: "Kits de secours",
+    category: 2,
     price: 2328,
     stock: 30,
     image:
@@ -51,8 +46,7 @@ const products = [
   {
     id: 6,
     name: "Fauteuil roulant manuel (standard)",
-    category: "Paramedical",
-    subcategory: "Mobilité",
+    category: 3,
     price: 32329,
     stock: 6,
     image:
@@ -61,8 +55,7 @@ const products = [
   {
     id: 7,
     name: "Béquilles (paire)",
-    category: "Paramedical",
-    subcategory: "Mobilité",
+    category: 3,
     price: 4525,
     stock: 28,
     image: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Crutches.jpg",
@@ -70,8 +63,7 @@ const products = [
   {
     id: 8,
     name: "Coussin pour fauteuil roulant (mousse)",
-    category: "Paramedical",
-    subcategory: "Mobilité",
+    category: 3,
     price: 7758,
     stock: 18,
     image:
@@ -80,8 +72,7 @@ const products = [
   {
     id: 9,
     name: "Civière pliable",
-    category: "Paramedical",
-    subcategory: "Transport d'urgence",
+    category: 4,
     price: 16747,
     stock: 5,
     image:
@@ -90,8 +81,7 @@ const products = [
   {
     id: 10,
     name: "Nébuliseur avec masque",
-    category: "Paramedical",
-    subcategory: "Respiration",
+    category: 5,
     price: 10344,
     stock: 12,
     image:
@@ -100,8 +90,7 @@ const products = [
   {
     id: 11,
     name: "Masque à oxygène (jetable)",
-    category: "Paramedical",
-    subcategory: "Respiration",
+    category: 5,
     price: 420,
     stock: 200,
     image:
@@ -110,8 +99,7 @@ const products = [
   {
     id: 12,
     name: "Gants chirurgicaux (paire)",
-    category: "Paramedical",
-    subcategory: "Protection",
+    category: 6,
     price: 257,
     stock: 560,
     image:
@@ -120,8 +108,7 @@ const products = [
   {
     id: 13,
     name: "Oxymètre de pouls (doigt)",
-    category: "Paramedical",
-    subcategory: "Diagnostic",
+    category: 7,
     price: 5043,
     stock: 22,
     image:
@@ -130,8 +117,7 @@ const products = [
   {
     id: 14,
     name: "Défibrillateur automatisé externe (DAE)",
-    category: "Paramedical",
-    subcategory: "Équipement d'urgence",
+    category: 8,
     price: 155055,
     stock: 2,
     image:
@@ -140,8 +126,7 @@ const products = [
   {
     id: 15,
     name: "Tensiomètre & brassard (kit tension artérielle)",
-    category: "Paramedical",
-    subcategory: "Diagnostic",
+    category: 7,
     price: 6465,
     stock: 14,
     image:
@@ -150,8 +135,7 @@ const products = [
   {
     id: 16,
     name: "Crème antiseptique (tube)",
-    category: "Paramedical",
-    subcategory: "Soins des plaies",
+    category: 9,
     price: 839,
     stock: 84,
     image:
@@ -160,8 +144,7 @@ const products = [
   {
     id: 17,
     name: "Hydratant visage (50ml)",
-    category: "Cosmetics",
-    subcategory: "Soins du visage",
+    category: 10,
     price: 1940,
     stock: 60,
     image: "https://assets.sebamedusa.com/spree/images/1176/large/2077781.jpg",
@@ -169,8 +152,7 @@ const products = [
   {
     id: 18,
     name: "Crème solaire SPF 30 (200ml)",
-    category: "Cosmetics",
-    subcategory: "Protection solaire",
+    category: 11,
     price: 1680,
     stock: 40,
     image:
@@ -179,8 +161,7 @@ const products = [
   {
     id: 19,
     name: "Ensemble de pinceaux maquillage (5 pcs)",
-    category: "Cosmetics",
-    subcategory: "Maquillage",
+    category: 12,
     price: 2910,
     stock: 90,
     image: "https://i.makeup.ae/5/5h/5hmsjtd0i9md.jpg",
@@ -188,8 +169,7 @@ const products = [
   {
     id: 20,
     name: "Vernis à ongles (rouge)",
-    category: "Cosmetics",
-    subcategory: "Maquillage",
+    category: 12,
     price: 938,
     stock: 150,
     image:
@@ -198,8 +178,7 @@ const products = [
   {
     id: 21,
     name: "Baume à lèvres (EOS assorti)",
-    category: "Cosmetics",
-    subcategory: "Soins des lèvres",
+    category: 13,
     price: 451,
     stock: 210,
     image: "https://www.britishcosmetics.com/cdn/shop/files/Vanilla-1.png",
@@ -207,8 +186,7 @@ const products = [
   {
     id: 22,
     name: "Baume à lèvres (ChapStick classique)",
-    category: "Cosmetics",
-    subcategory: "Soins des lèvres",
+    category: 13,
     price: 291,
     stock: 180,
     image:
@@ -217,8 +195,7 @@ const products = [
   {
     id: 23,
     name: "Pack de baumes à lèvres (Burt's Bees)",
-    category: "Cosmetics",
-    subcategory: "Soins des lèvres",
+    category: 13,
     price: 711,
     stock: 95,
     image:
@@ -227,8 +204,7 @@ const products = [
   {
     id: 24,
     name: "Rouge à lèvres (satiné rouge)",
-    category: "Cosmetics",
-    subcategory: "Maquillage",
+    category: 12,
     price: 1423,
     stock: 130,
     image:
@@ -237,12 +213,93 @@ const products = [
   {
     id: 25,
     name: "Flacon de parfum (échantillon)",
-    category: "Cosmetics",
-    subcategory: "Parfum",
+    category: 14,
     price: 5819,
     stock: 25,
     image:
       "https://www.roetell.com/wp-content/uploads/2023/11/1ml-perfume-sample-vials-4.jpg",
   },
 ];
-export default products;
+
+export const categories = [
+  {
+    id: 1,
+    name: "Pansements",
+    image:
+      "https://old.thememoryboxfoundation.co.uk/wp-content/uploads/2021/03/MBPO-303-plaster-tin-3-600x600.jpg",
+  },
+  {
+    id: 2,
+    name: "Kits de secours",
+    image: "https://m.media-amazon.com/images/I/51BfKzuE2uL._AC_SX569_.jpg",
+  },
+  {
+    id: 3,
+    name: "Mobilité",
+    image:
+      "https://4.imimg.com/data4/JM/MK/MY-33475376/standard-manual-wheelchair-1000x1000.jpg",
+  },
+  {
+    id: 4,
+    name: "Transport d'urgence",
+    image:
+      "https://ferno.com/ferno/media/us/products/product-model-11-emergency-stretcher-orange.jpg?ext=.jpg",
+  },
+  {
+    id: 5,
+    name: "Respiration",
+    image:
+      "https://www.wellead.com/wp-content/uploads/2024/09/%E5%9B%BE%E7%89%872.png",
+  },
+  {
+    id: 6,
+    name: "Protection",
+    image:
+      "https://4.imimg.com/data4/CX/VA/MY-745356/non-sterile-surgical-gloves-1000x1000.jpg",
+  },
+  {
+    id: 7,
+    name: "Diagnostic",
+    image:
+      "https://www.cmihealth.com/cdn/shop/articles/cmihealthinc-seotool-48350-understandinghowto-blogbanner1_1080x.jpg",
+  },
+  {
+    id: 8,
+    name: "Équipement d'urgence",
+    image:
+      "https://www.meditech.com.cn/uploads/allimg/230325/1-1Ca25927-1248.png",
+  },
+  {
+    id: 9,
+    name: "Soins des plaies",
+    image:
+      "https://medichill.com.au/cdn/shop/products/AA25_c5bf3a94-c291-4997-b8d7-5eb8d96a5121.png",
+  },
+  {
+    id: 10,
+    name: "Soins du visage",
+    image: "https://assets.sebamedusa.com/spree/images/1176/large/2077781.jpg",
+  },
+  {
+    id: 11,
+    name: "Protection solaire",
+    image:
+      "https://www.gosupps.com/media/catalog/product/cache/25/small_image/1500x1650/9df78eab33525d08d6e5fb8d27136e95/7/1/71ryQXLbTTL.jpg",
+  },
+  {
+    id: 12,
+    name: "Maquillage",
+    image: "https://i.makeup.ae/5/5h/5hmsjtd0i9md.jpg",
+  },
+  {
+    id: 13,
+    name: "Soins des lèvres",
+    image: "https://www.britishcosmetics.com/cdn/shop/files/Vanilla-1.png",
+  },
+  {
+    id: 14,
+    name: "Parfum",
+    image:
+      "https://www.roetell.com/wp-content/uploads/2023/11/1ml-perfume-sample-vials-4.jpg",
+  },
+];

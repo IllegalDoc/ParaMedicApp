@@ -30,9 +30,20 @@ export const Item = ({
 }) => (
   <Pressable onPress={onPress} style={cardStyle}>
     <Image style={imageStyle} source={{ uri: product.image }} />
-    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+    <View style={{ flexDirection: "row" }}>
       <Text style={nameStyle}>{product.name}</Text>
-      {product.price && <Text style={{ flex: 1 }}>{product.price} DA </Text>}
+      {product.price && (
+        <Text
+          style={{
+            alignSelf: "center",
+            fontFamily: "Inter_700Bold",
+            fontSize: 16,
+            color: "#4F964F",
+          }}
+        >
+          {product.price} DA{" "}
+        </Text>
+      )}
     </View>
   </Pressable>
 );

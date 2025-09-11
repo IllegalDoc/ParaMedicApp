@@ -15,7 +15,7 @@ export const products = [
     price: 582,
     stock: 75,
     image:
-      "https://www.wdmedicalsupply.com/uploads/202133850/spandex-crepe-bandage08408823272.jpg",
+      "https://i5.walmartimages.com/asr/37af4300-49c1-4b36-81e5-a1dd1a3754c7.6c2615848e9db06e661c3b7b59208436.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
   },
   {
     id: 3,

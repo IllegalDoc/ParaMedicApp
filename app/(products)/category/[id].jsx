@@ -6,7 +6,8 @@ import {
 } from "@expo-google-fonts/inter";
 import { useLocalSearchParams } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { products } from "../../../assets/data/products";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { categories, products } from "../../../assets/data/products";
 import { chunkArray, Item } from "../categories.jsx";
 export default function ProductsByCategory() {
   const { id } = useLocalSearchParams();
@@ -18,36 +19,44 @@ export default function ProductsByCategory() {
     Inter_500Medium,
     Inter_700Bold,
   });
+  const catt = categories.find((cat) => cat.id.toString() === id).name;
+
   return (
-    <View style={{ padding: 16, backgroundColor: "#F7FCF7", height: "100%" }}>
-      <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-        Produits de la catégorie
-      </Text>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ gap: 12 }}
-      >
-        {filteredRows.map((row, rowIndex) => (
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <View
+          style={{ padding: 16, backgroundColor: "#F7FCF7", height: "100%" }}
+        >
+          <Text style={styles.headerStyle}>{catt}</Text>
+
           <ScrollView
-            contentContainerStyle={{ gap: 30 }}
-            key={rowIndex}
-            horizontal
-            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ gap: 20 }}
           >
-            {row.map((item, itemIndex) => (
-              <Item
-                cardStyle={styles.productStyle}
-                nameStyle={styles.productTitlestyle}
-                key={itemIndex}
-                product={item}
-                imageStyle={styles.productImagestyle}
-                onPress={(e) => console.log("test")}
-              ></Item>
+            <Text style={{ fontSize: 22, fontWeight: "bold" }}>Produits</Text>
+            {filteredRows.map((row, rowIndex) => (
+              <ScrollView
+                contentContainerStyle={{ gap: 20 }}
+                key={rowIndex}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+              >
+                {row.map((item, itemIndex) => (
+                  <Item
+                    cardStyle={styles.productStyle}
+                    nameStyle={styles.productTitlestyle}
+                    key={itemIndex}
+                    product={item}
+                    imageStyle={styles.productImagestyle}
+                    onPress={(e) => console.log("test")}
+                  ></Item>
+                ))}
+              </ScrollView>
             ))}
           </ScrollView>
-        ))}
-      </ScrollView>
-    </View>
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 const styles = StyleSheet.create({
@@ -59,4 +68,13 @@ const styles = StyleSheet.create({
   },
   productImagestyle: { height: 173, width: 173, borderRadius: 30 },
   productStyle: { width: 173, gap: 12 },
+  headerStyle: {
+    height: 72,
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 18,
+    fontFamily: "Inter_700Bold",
+    color: "#010601",
+    textAlign: "center",
+  },
 });

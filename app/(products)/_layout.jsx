@@ -11,6 +11,10 @@ export default function productLayout() {
         }}
       />
       <Stack.Screen
+        name="category/[id]"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
         name="allOrders"
         options={{ title: "Orders", headerShown: false }}
       />

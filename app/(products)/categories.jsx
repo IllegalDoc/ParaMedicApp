@@ -30,7 +30,7 @@ export const Item = ({
 }) => (
   <Pressable onPress={onPress} style={cardStyle}>
     <Image style={imageStyle} source={{ uri: product.image }} />
-    <View style={{ flexDirection: "row" }}>
+    <View style={{ flexDirection: "row", padding: 15 }}>
       <Text style={nameStyle}>{product.name}</Text>
       {product.price && (
         <Text
@@ -41,7 +41,7 @@ export const Item = ({
             color: "#4F964F",
           }}
         >
-          {product.price} DA{" "}
+          {product.price} DA
         </Text>
       )}
     </View>
@@ -122,11 +122,11 @@ export default function Categories() {
         </View>
 
         <View style={{ flex: 1, padding: 16 }}>
-          <Text style={styles.carouselTitle}>Produits</Text>
           <ScrollView
             contentContainerStyle={{ gap: 16 }}
             showsVerticalScrollIndicator={false}
           >
+            <Text style={styles.carouselTitle}>Produits</Text>
             {groupedCategories.map((row, rowIndex) => (
               <ScrollView
                 contentContainerStyle={{ gap: 12 }}

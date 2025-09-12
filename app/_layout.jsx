@@ -12,7 +12,6 @@ export default function RootLayout() {
         },
       }}
     >
-      Tab
       <Tabs.Screen
         name="index"
         options={{ headerShown: false, title: "Home" }}

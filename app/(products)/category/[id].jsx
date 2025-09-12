@@ -4,14 +4,14 @@ import {
   Inter_700Bold,
   useFonts,
 } from "@expo-google-fonts/inter";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { categories, products } from "../../../assets/data/products";
 import { chunkArray, Item } from "../categories.jsx";
 export default function ProductsByCategory() {
   const { id } = useLocalSearchParams();
-
+  const router = useRouter();
   const filtered = products.filter((p) => p.category.toString() === id);
   const filteredRows = chunkArray(filtered, 2);
   const [fontsLoaded] = useFonts({
@@ -48,7 +48,7 @@ export default function ProductsByCategory() {
                     key={itemIndex}
                     product={item}
                     imageStyle={styles.productImagestyle}
-                    onPress={(e) => console.log("test")}
+                    onPress={(e) => router.push(`/products/${item.id}`)}
                   ></Item>
                 ))}
               </ScrollView>
@@ -61,7 +61,7 @@ export default function ProductsByCategory() {
 }
 const styles = StyleSheet.create({
   productTitlestyle: {
-    width: "70%",
+    width: "100%",
     fontSize: 16,
     fontFamily: "Inter_500Medium",
     color: "#0D1C0D",

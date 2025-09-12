@@ -30,13 +30,13 @@ export const Item = ({
 }) => (
   <Pressable onPress={onPress} style={cardStyle}>
     <Image style={imageStyle} source={{ uri: product.image }} />
-    <View style={{ flexDirection: "row", padding: 15 }}>
+    <View style={{ padding: 15 }}>
       <Text style={nameStyle}>{product.name}</Text>
       {product.price && (
         <Text
           style={{
-            alignSelf: "center",
-            fontFamily: "Inter_700Bold",
+            alignSelf: "flex-start",
+            fontFamily: "Inter_500Medium",
             fontSize: 16,
             color: "#4F964F",
           }}
@@ -148,7 +148,9 @@ export default function Categories() {
             ))}
           </ScrollView>
         </View>
-        <Text style={styles.allProductText}>Tout les produits</Text>
+        <Link style={styles.allProductText} href={"allProducts"}>
+          Tout les produits
+        </Link>
       </SafeAreaView>
     </SafeAreaProvider>
   );

@@ -18,11 +18,14 @@ export default function productLayout() {
         name="allOrders"
         options={{ title: "Orders", headerShown: false }}
       />
-
       <Stack.Screen
         name="allProducts"
-        options={{ title: " All Products", headerShown: false }}
+        options={{ title: "Products", headerShown: false }}
       />
+      <Stack.Screen
+        name="products/[id]"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
     </Stack>
   );
 }

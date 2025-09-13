@@ -16,13 +16,15 @@ export default function allProducts() {
     Inter_700Bold,
   });
   const router = useRouter();
+
   const renderItem = ({ item }) => (
     <Item
+      style={{ alignSelf: "flex-start" }}
       cardStyle={styles.productStyle}
       nameStyle={styles.productTitlestyle}
       product={item}
       imageStyle={styles.productImagestyle}
-      onPress={(e) => console.log("test")}
+      onPress={(e) => router.push(`/products/${item.id}`)}
     />
   );
 
@@ -42,7 +44,7 @@ export default function allProducts() {
           keyExtractor={(item) => item.id}
           style={styles.listStyle}
           contentContainerStyle={styles.insideListstyle}
-          columnWrapperStyle={{ gap: 20 }}
+          columnWrapperStyle={{ gap: 20, paddingLeft: 15, paddingRight: 15 }}
         />
       </SafeAreaView>
     </SafeAreaProvider>
@@ -67,5 +69,8 @@ const styles = StyleSheet.create({
   productImagestyle: { height: 173, width: 173, borderRadius: 30 },
   productStyle: { width: 173, gap: 12 },
   listStyle: { width: "100%" },
-  insideListstyle: { gap: 20, alignItems: "center" },
+  insideListstyle: {
+    gap: 20,
+    alignItems: "flex-start",
+  },
 });

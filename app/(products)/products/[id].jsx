@@ -4,6 +4,10 @@ import {
   Inter_700Bold,
   useFonts,
 } from "@expo-google-fonts/inter";
+import {
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+} from "@expo-google-fonts/poppins";
 import { useLocalSearchParams } from "expo-router";
 import { useState } from "react";
 import {
@@ -24,6 +28,8 @@ export default function Product() {
     Inter_400Regular,
     Inter_500Medium,
     Inter_700Bold,
+    Poppins_400Regular,
+    Poppins_600SemiBold,
   });
   const [quantity, setQuantity] = useState(1);
 
@@ -34,7 +40,15 @@ export default function Product() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ gap: 12, padding: 10 }}>
-        <ScrollView contentContainerStyle={{ gap: 30 }}>
+        <ScrollView
+          contentContainerStyle={{
+            gap: 30,
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.2,
+            shadowRadius: 6,
+          }}
+        >
           <Text style={styles.headerStyle}>Détails du produit</Text>
           <Image source={{ uri: product.image }} style={styles.imageStyle} />
 
@@ -107,7 +121,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     fontSize: 18,
-    fontFamily: "Inter_700Bold",
+    fontFamily: "Poppins_600SemiBold",
     color: "#010601",
     textAlign: "center",
   },
@@ -116,26 +130,27 @@ const styles = StyleSheet.create({
     width: "98%",
     borderRadius: 30,
     alignSelf: "center",
+    elevation: 4,
   },
   NameStyle: {
     fontSize: 22,
-    fontFamily: "Inter_700Bold",
+    fontFamily: "Poppins_600SemiBold",
     color: "#0D1C0D",
   },
 
   stockStyle: {
     fontSize: 16,
-    fontFamily: "Inter_400Regular",
+    fontFamily: "Poppins_400Regular",
     color: "#0D1C0D",
   },
   stockTextStyle: {
     fontSize: 16,
-    fontFamily: "Inter_700Bold",
+    fontFamily: "Poppins_600SemiBold",
     color: "#4F964F",
   },
   descriptionStyle: {
     fontSize: 16,
-    fontFamily: "Inter_400Regular",
+    fontFamily: "Poppins_400Regular",
     color: "#0D1C0D",
   },
   quantityBoxStyle: {
@@ -143,14 +158,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   quantityTextStyle: {
-    transform: [{ translateY: 15 }],
+    transform: [{ translateY: 12 }],
     fontSize: 16,
-    fontFamily: "Inter_400Regular",
+    fontFamily: "Poppins_400Regular",
     color: "#0D1C0D",
   },
   priceTextStyle: {
     fontSize: 22,
-    fontFamily: "Inter_700Bold",
+    fontFamily: "Poppins_600SemiBold",
     color: "#0D1C0D",
   },
   quantityStyle: {
@@ -166,14 +181,18 @@ const styles = StyleSheet.create({
     height: 38,
     width: 42,
     fontSize: 16,
-    fontFamily: "Inter_400Regular",
+    fontFamily: "Poppins_400Regular",
     color: "#0D1C0D",
     borderRadius: 300,
 
     textAlign: "center",
-    transform: [{ translateY: 8 }],
+    transform: [{ translateY: 6 }],
   },
-  addtocartText: { fontSize: 16, fontFamily: "Inter_700Bold" },
+  addtocartText: {
+    fontSize: 16,
+    fontFamily: "Poppins_600SemiBold",
+    elevation: 4,
+  },
   addtocartButton: {
     height: 58,
     alignSelf: "center",
@@ -182,5 +201,6 @@ const styles = StyleSheet.create({
     padding: 18,
     borderRadius: 10,
     alignItems: "center",
+    elevation: 4,
   },
 });

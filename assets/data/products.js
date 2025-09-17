@@ -69,7 +69,8 @@ export const products = [
     category: 3,
     price: 4500,
     stock: 28,
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Crutches.jpg",
+    image:
+      "https://www.eldereaseindia.com/wp-content/uploads/2018/07/332CEASFMBlSw-1-1.jpg",
     description:
       "Paire de béquilles réglables en hauteur, idéale pour faciliter la marche lors d’une blessure.",
   },
@@ -102,7 +103,7 @@ export const products = [
     price: 10300,
     stock: 12,
     image:
-      "https://www.wellead.com/wp-content/uploads/2024/09/%E5%9B%BE%E7%89%872.png",
+      "https://media.assets.medline.eu/www/media/catalog/product/cache/8b3f2670f4e3f36326a29b52a0eab099/m/a/main_PRD_41893P_5.jpeg",
     description:
       "Appareil médical permettant l’inhalation de médicaments pour soulager les troubles respiratoires.",
   },
@@ -296,7 +297,7 @@ export const categories = [
     id: 5,
     name: "Respiration",
     image:
-      "https://www.wellead.com/wp-content/uploads/2024/09/%E5%9B%BE%E7%89%872.png",
+      "https://media.assets.medline.eu/www/media/catalog/product/cache/8b3f2670f4e3f36326a29b52a0eab099/m/a/main_PRD_41893P_5.jpeg",
   },
   {
     id: 6,

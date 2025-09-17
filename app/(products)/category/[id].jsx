@@ -4,6 +4,10 @@ import {
   Inter_700Bold,
   useFonts,
 } from "@expo-google-fonts/inter";
+import {
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+} from "@expo-google-fonts/poppins";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -18,6 +22,8 @@ export default function ProductsByCategory() {
     Inter_400Regular,
     Inter_500Medium,
     Inter_700Bold,
+    Poppins_400Regular,
+    Poppins_600SemiBold,
   });
   const catt = categories.find((cat) => cat.id.toString() === id).name;
 
@@ -63,17 +69,30 @@ const styles = StyleSheet.create({
   productTitlestyle: {
     width: "100%",
     fontSize: 16,
-    fontFamily: "Inter_500Medium",
+    fontFamily: "Poppins_400Regular",
     color: "#0D1C0D",
   },
-  productImagestyle: { height: 173, width: 173, borderRadius: 30 },
-  productStyle: { width: 173, gap: 12 },
+  productImagestyle: {
+    height: 173,
+    width: 173,
+    borderRadius: 30,
+    elevation: 4,
+  },
+  productStyle: {
+    width: 173,
+    gap: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 4,
+  },
   headerStyle: {
     height: 72,
     alignItems: "center",
     justifyContent: "center",
     fontSize: 18,
-    fontFamily: "Inter_700Bold",
+    fontFamily: "Poppins_600SemiBold",
     color: "#010601",
     textAlign: "center",
   },

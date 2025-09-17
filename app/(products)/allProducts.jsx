@@ -3,6 +3,10 @@ import {
   Inter_500Medium,
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
+import {
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+} from "@expo-google-fonts/poppins";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
 import { FlatList, StyleSheet, Text } from "react-native";
@@ -14,6 +18,8 @@ export default function allProducts() {
     Inter_400Regular,
     Inter_500Medium,
     Inter_700Bold,
+    Poppins_400Regular,
+    Poppins_600SemiBold,
   });
   const router = useRouter();
 
@@ -54,7 +60,7 @@ export default function allProducts() {
 const styles = StyleSheet.create({
   HeaderTitle: {
     fontSize: 18,
-    fontFamily: "Inter_700Bold",
+    fontFamily: "Poppins_600SemiBold",
     color: "#0D1C0D",
     textAlign: "center",
     padding: 10,
@@ -63,10 +69,19 @@ const styles = StyleSheet.create({
   productTitlestyle: {
     width: "100%",
     fontSize: 16,
-    fontFamily: "Inter_500Medium",
+    fontFamily: "Poppins_400Regular",
     color: "#0D1C0D",
   },
-  productImagestyle: { height: 173, width: 173, borderRadius: 30 },
+  productImagestyle: {
+    height: 173,
+    width: 173,
+    borderRadius: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 4,
+  },
   productStyle: { width: 173, gap: 12 },
   listStyle: { width: "100%" },
   insideListstyle: {

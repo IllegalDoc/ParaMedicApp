@@ -1,7 +1,10 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { CartProvider, useCart } from "../CartContext";
+import CartDrawer from "../CartDrawer";
 
-export default function RootLayout() {
+function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
@@ -44,5 +47,26 @@ export default function RootLayout() {
         }}
       />
     </Tabs>
+  );
+}
+
+function RootWrapper() {
+  const { cartVisible, setCartVisible } = useCart();
+
+  return (
+    <>
+      <TabsLayout />
+      <CartDrawer visible={cartVisible} onClose={() => setCartVisible(false)} />
+    </>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <CartProvider>
+        <RootWrapper />
+      </CartProvider>
+    </GestureHandlerRootView>
   );
 }

@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { useState } from "react";
 import {
   Pressable,
@@ -189,6 +190,12 @@ export default function Index() {
             )}
           </Pressable>
         </ScrollView>
+        <Link
+          href={"./test"}
+          style={{ fontSize: 30, height: 100, color: "black" }}
+        >
+          Click Test
+        </Link>
       </SafeAreaView>
     </SafeAreaProvider>
   );

@@ -1,5 +1,7 @@
+// app/_layout.jsx
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import "react-native-gesture-handler";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { CartProvider, useCart } from "../CartContext";
 import CartDrawer from "../CartDrawer";

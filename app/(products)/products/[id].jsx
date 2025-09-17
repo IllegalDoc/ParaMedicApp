@@ -20,8 +20,10 @@ import {
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { products } from "../../../assets/data/products";
+import { useCart } from "../../../CartContext";
 
 export default function Product() {
+  const { addToCart } = useCart();
   const { id } = useLocalSearchParams();
   const product = products.find((p) => String(p.id) === String(id));
   const [fontsLoaded] = useFonts({
@@ -106,6 +108,7 @@ export default function Product() {
               { backgroundColor: quantity === 0 ? "#ccc" : "#17CF17" },
             ]}
             disabled={quantity === 0}
+            onPress={() => addToCart(product, quantity)}
           >
             <Text style={styles.addtocartText}>Ajouter au panier</Text>
           </Pressable>

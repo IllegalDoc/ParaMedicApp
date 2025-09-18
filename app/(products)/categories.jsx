@@ -74,7 +74,7 @@ export default function Categories() {
   if (!fontsLoaded) {
     return null;
   }
-  console.log("Cart pressed, cartVisible should now be true");
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F7FCF7" }}>
       <View style={styles.headerContainer}>
@@ -107,7 +107,6 @@ export default function Categories() {
           </Link>
           <Pressable
             onPress={() => {
-              console.log("Cart pressed");
               setCartVisible(true);
             }}
           >

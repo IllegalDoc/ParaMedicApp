@@ -113,7 +113,7 @@ export default function Categories() {
           >
             <Svg
               style={styles.headerCart}
-              fill="#000000"
+              fill="#4F964F"
               stroke="#000000"
               strokeWidth={0.009}
               viewBox="-90.29 -90.29 1083.44 1083.44"

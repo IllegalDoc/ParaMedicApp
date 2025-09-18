@@ -56,7 +56,7 @@ export default function Product() {
 
           <View style={{ flexShrink: 1, gap: 30 }}>
             <Text style={styles.NameStyle}>{product.name}</Text>
-            <Text style={{ fontSize: 20 }}>
+            <Text style={styles.descriptionStyle}>
               {!product.description
                 ? "Aucune description."
                 : product.description}

@@ -50,7 +50,11 @@ export default function allProducts() {
   if (!fontsLoaded) {
     return null;
   }
-
+  const filtered = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(searchBarValue.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchBarValue.toLowerCase())
+  );
   return (
     <SafeAreaProvider>
       <SafeAreaView>
@@ -59,7 +63,6 @@ export default function allProducts() {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              justifyContent: "space-between",
             }}
           >
             <View style={styles.SearchbarContainer}>
@@ -169,7 +172,7 @@ export default function allProducts() {
         )}
 
         <FlatList
-          data={products}
+          data={searchBarValue === "" ? products : filtered}
           renderItem={renderItem}
           numColumns={2}
           keyExtractor={(item) => item.id}
@@ -219,10 +222,10 @@ const styles = StyleSheet.create({
   },
   SearchbarContainer: {
     height: 80,
+    width: "90%",
     padding: 20,
     justifyContent: "center",
     marginBottom: 40,
-    alignItems: "baseline",
   },
   Searchbarinput: { overflow: "hidden" },
   Searchbar: {
@@ -231,7 +234,6 @@ const styles = StyleSheet.create({
     gap: 10,
     height: 85,
 
-    width: "85%",
     backgroundColor: "#E8F2E8",
     borderRadius: 25,
     flexDirection: "row",

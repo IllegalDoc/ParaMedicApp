@@ -26,7 +26,6 @@ export default function Index() {
       onPress={(e) => router.push(`/products/${item.id}`)}
     />
   );
-
   const filtered = products.filter(
     (product) =>
       product.name.toLowerCase().includes(searchBarValue.toLowerCase()) ||

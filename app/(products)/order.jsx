@@ -133,7 +133,7 @@ export default function Order() {
                   items: cart,
                   total: totalPrice,
                   orderStatus: "pending",
-                  createdAt: new Date().toISOString(),
+                  createdAt: new Date().toLocaleString("fr-FR"),
                 };
 
                 Toast.show({
@@ -143,9 +143,13 @@ export default function Order() {
                   position: "bottom",
                   visibilityTime: 3000,
                 });
-                clearCart();
+                addOrder(newOrder);
+
                 setTimeout(() => {
                   router.push("/allProducts");
+                }, 100);
+                setTimeout(() => {
+                  clearCart();
                 }, 100);
               }}
               style={[styles.confirmButtons, { backgroundColor: "#17CF17" }]}

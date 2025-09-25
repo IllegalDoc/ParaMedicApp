@@ -102,7 +102,11 @@ export default function Categories() {
           </SVGText>
         </Svg>
         <View style={styles.headerRight}>
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              router.push("/allOrders");
+            }}
+          >
             <Text style={styles.headerMyorders}>Mes Commandes</Text>
           </Pressable>
           <Pressable

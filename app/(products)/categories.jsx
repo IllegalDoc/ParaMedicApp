@@ -102,9 +102,9 @@ export default function Categories() {
           </SVGText>
         </Svg>
         <View style={styles.headerRight}>
-          <Link style={styles.headerMyorders} href={""}>
-            Mes Commandes
-          </Link>
+          <Pressable>
+            <Text style={styles.headerMyorders}>Mes Commandes</Text>
+          </Pressable>
           <Pressable
             onPress={() => {
               setCartVisible(true);

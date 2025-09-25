@@ -9,7 +9,7 @@ import {
   Poppins_600SemiBold,
 } from "@expo-google-fonts/poppins";
 import { useFonts } from "expo-font";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import {
   FlatList,
   Image,
@@ -22,7 +22,10 @@ import Modal from "react-native-modal";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { G, Path } from "react-native-svg";
 import { useCart } from "./CartContext";
+import { useUser } from "./UserContext";
 export default function CartDrawer({ visible, onClose }) {
+  const { userInfo, saveUserInfo } = useUser();
+  const router = useRouter();
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_500Medium,
@@ -32,7 +35,6 @@ export default function CartDrawer({ visible, onClose }) {
   });
   const { cart, addToCart, removeFromCart, removeItem, totalPrice } = useCart();
   const insets = useSafeAreaInsets();
-  console.log("CartDrawer mounted");
 
   return (
     <Modal
@@ -160,7 +162,6 @@ export default function CartDrawer({ visible, onClose }) {
               <Pressable
                 onPress={() => {
                   onClose?.();
-                  console.log("Go to products");
                 }}
               >
                 <Link
@@ -192,7 +193,17 @@ export default function CartDrawer({ visible, onClose }) {
                 styles.checkoutButton,
                 { backgroundColor: pressed ? "#2ab62aff" : "#17CF17" }, // darker when pressed
               ]}
-              onPress={() => console.log("Checkout")}
+              onPress={() => {
+                saveUserInfo({
+                  username: "Anes123",
+                  name: "Anis",
+                  lastName: "Bendjaballah",
+                  address: "Rue 12, Tipaza",
+                  phone: "0793584708",
+                });
+                router.push("/order");
+                onClose();
+              }}
             >
               <Text style={styles.checkoutText}>Commander</Text>
             </Pressable>

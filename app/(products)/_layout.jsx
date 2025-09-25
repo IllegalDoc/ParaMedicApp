@@ -10,10 +10,7 @@ export default function productLayout() {
           headerShown: false,
         }}
       />
-      <Stack.Screen
-        name="category/[id]"
-        options={{ headerShown: false }}
-      ></Stack.Screen>
+      <Stack.Screen name="category/[id]" options={{ headerShown: false }} />
       <Stack.Screen
         name="allOrders"
         options={{ title: "Orders", headerShown: false }}
@@ -22,8 +19,9 @@ export default function productLayout() {
         name="allProducts"
         options={{ title: "Products", headerShown: false }}
       />
+      <Stack.Screen name="products/[id]" options={{ headerShown: false }} />
       <Stack.Screen
-        name="products/[id]"
+        name="order"
         options={{ headerShown: false }}
       ></Stack.Screen>
     </Stack>

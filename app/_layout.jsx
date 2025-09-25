@@ -3,8 +3,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import "react-native-gesture-handler";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import Toast from "react-native-toast-message";
 import { CartProvider, useCart } from "../CartContext";
 import CartDrawer from "../CartDrawer";
+import { UserProvider } from "../UserContext";
+import { OrderProvider } from "../assets/OrderContext";
 
 function TabsLayout() {
   return (
@@ -66,9 +69,14 @@ function RootWrapper() {
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <CartProvider>
-        <RootWrapper />
-      </CartProvider>
+      <UserProvider>
+        <OrderProvider>
+          <CartProvider>
+            <RootWrapper />
+            <Toast />
+          </CartProvider>
+        </OrderProvider>
+      </UserProvider>
     </GestureHandlerRootView>
   );
 }

@@ -25,7 +25,7 @@ import { useUser } from "../../UserContext";
 
 export default function Order() {
   const renderItem = ({ item }) => (
-    <View
+    <Pressable
       style={{
         flexDirection: "row",
         padding: 20,
@@ -51,7 +51,7 @@ export default function Order() {
           Quantité:{item.quantity}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
   const router = useRouter();
   const [fontsLoaded] = useFonts({

@@ -24,6 +24,10 @@ export default function productLayout() {
         name="order"
         options={{ headerShown: false }}
       ></Stack.Screen>
+      <Stack.Screen
+        name="orders/[id]"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
     </Stack>
   );
 }

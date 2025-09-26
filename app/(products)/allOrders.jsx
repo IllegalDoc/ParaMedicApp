@@ -8,13 +8,18 @@ import {
   Poppins_600SemiBold,
 } from "@expo-google-fonts/poppins";
 import { useFonts } from "expo-font";
-import { FlatList, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import { FlatList, Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useOrders } from "../../assets/OrderContext";
 export default function allOrders() {
+  const router = useRouter();
   const { orders } = useOrders();
   const renderItem = ({ item }) => (
-    <View
+    <Pressable
+      onPress={(e) => {
+        router.push(`/orders/${item.id}`);
+      }}
       style={{
         flexDirection: "row",
         justifyContent: "space-between",
@@ -38,7 +43,7 @@ export default function allOrders() {
       <Text style={{ fontFamily: "Inter_500Medium", fontSize: 16 }}>
         {item.total} DA
       </Text>
-    </View>
+    </Pressable>
   );
   const [fontsLoaded] = useFonts({
     Inter_400Regular,

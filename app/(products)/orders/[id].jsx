@@ -32,13 +32,13 @@ export default function OrderDescription() {
         height: 72,
       }}
     >
-      <View>
-        <Text style={styles.DescriptionText}>{item.name}</Text>
+      <View style={{ width: "85%" }}>
+        <Text style={[styles.DescriptionText]}>{item.name}</Text>
         <Text style={[styles.DescriptionText, { color: "#4F964F" }]}>
           Quantité : {item.quantity}
         </Text>
       </View>
-      <Text style={styles.valueText}>{item.price} DA</Text>
+      <Text style={[styles.valueText]}>{item.price} DA</Text>
     </View>
   );
   return (
@@ -46,7 +46,7 @@ export default function OrderDescription() {
       <FlatList
         data={order.items}
         renderItem={renderItem}
-        style={{ padding: 16 }}
+        style={{ padding: 16, flex: 1 }}
         contentContainerStyle={{ gap: 16 }}
         ListHeaderComponentStyle={{ gap: 12, marginBottom: 20 }}
         ListHeaderComponent={
@@ -74,11 +74,17 @@ export default function OrderDescription() {
               Commande#{order.id}
             </Text>
             <View
-              style={{ flexDirection: "row", justifyContent: "space-between" }}
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                marginBottom: 20,
+              }}
             >
               <Text style={styles.DescriptionText}>Date de Commande</Text>
 
-              <Text style={styles.valueText}>{order.createdAt}</Text>
+              <Text style={styles.valueText}>
+                {order.createdAt.slice(0, 10)}
+              </Text>
             </View>
             <View
               style={{
@@ -104,10 +110,14 @@ export default function OrderDescription() {
         ListFooterComponent={
           <>
             <View
-              style={{ flexDirection: "row", justifyContent: "space-between" }}
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                marginTop: 40,
+              }}
             >
-              <Text>Total</Text>
-              <Text>{order.total} DA</Text>
+              <Text style={styles.valueText}>Total</Text>
+              <Text style={[styles.valueText]}>{order.total} DA</Text>
             </View>
             <Pressable
               style={{

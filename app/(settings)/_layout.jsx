@@ -3,6 +3,10 @@ export default function settingsLayout() {
   return (
     <Stack>
       <Stack.Screen
+        name="contactUs"
+        options={{ title: " Contact Us", headerShown: false }}
+      />
+      <Stack.Screen
         name="aboutUs"
         options={{ title: "About Us", headerShown: false }}
       />
@@ -14,10 +18,6 @@ export default function settingsLayout() {
         }}
       />
 
-      <Stack.Screen
-        name="contactUs"
-        options={{ title: " Contact Us", headerShown: false }}
-      />
       <Stack.Screen
         name="userInfo"
         options={{ title: " User Info", headerShown: false }}

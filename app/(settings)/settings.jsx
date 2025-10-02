@@ -9,7 +9,7 @@ import {
 } from "@expo-google-fonts/poppins";
 import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
 export default function Settings() {
@@ -24,7 +24,10 @@ export default function Settings() {
   return (
     <SafeAreaView style={{ padding: 15 }}>
       <Text style={styles.HeaderTitle}>Parametres</Text>
-      <View style={styles.settingContainer}>
+      <Pressable
+        onPress={() => router.push("/userInfo")}
+        style={styles.settingContainer}
+      >
         <View style={styles.svgContainer}>
           <Svg width={25} height={25} viewBox="0 0 20 20" fill="none">
             <Path
@@ -36,8 +39,8 @@ export default function Settings() {
           </Svg>
         </View>
         <Text style={styles.settingText}>Vos Informations</Text>
-      </View>
-      <View style={styles.settingContainer}>
+      </Pressable>
+      <Pressable style={styles.settingContainer}>
         <View style={styles.svgContainer}>
           <Svg width={24} height={24} viewBox="0 0 24 24" fill="none">
             <Path
@@ -49,8 +52,8 @@ export default function Settings() {
           </Svg>
         </View>
         <Text style={styles.settingText}>À propos de nous</Text>
-      </View>
-      <View style={styles.settingContainer}>
+      </Pressable>
+      <Pressable style={styles.settingContainer}>
         <View style={styles.svgContainer}>
           <Svg width={19} height={19} viewBox="0 0 19 19" fill="none">
             <Path
@@ -62,7 +65,7 @@ export default function Settings() {
           </Svg>
         </View>
         <Text style={styles.settingText}>Nous Contacter</Text>
-      </View>
+      </Pressable>
     </SafeAreaView>
   );
 }

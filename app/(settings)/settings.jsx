@@ -40,7 +40,10 @@ export default function Settings() {
         </View>
         <Text style={styles.settingText}>Vos Informations</Text>
       </Pressable>
-      <Pressable style={styles.settingContainer}>
+      <Pressable
+        style={styles.settingContainer}
+        onPress={() => router.push("/aboutUs")}
+      >
         <View style={styles.svgContainer}>
           <Svg width={24} height={24} viewBox="0 0 24 24" fill="none">
             <Path
@@ -53,7 +56,10 @@ export default function Settings() {
         </View>
         <Text style={styles.settingText}>À propos de nous</Text>
       </Pressable>
-      <Pressable style={styles.settingContainer}>
+      <Pressable
+        style={styles.settingContainer}
+        onPress={() => router.push("/contactUs")}
+      >
         <View style={styles.svgContainer}>
           <Svg width={19} height={19} viewBox="0 0 19 19" fill="none">
             <Path

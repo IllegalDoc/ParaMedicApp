@@ -313,7 +313,7 @@ export const categories = [
   },
   {
     id: 8,
-    name: "Équipement d'urgence",
+    name: "Equipement d'urgence",
     image:
       "https://www.meditech.com.cn/uploads/allimg/230325/1-1Ca25927-1248.png",
   },

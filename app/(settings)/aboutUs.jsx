@@ -8,6 +8,7 @@ import {
   Poppins_600SemiBold,
 } from "@expo-google-fonts/poppins";
 import { useFonts } from "expo-font";
+import { useRouter } from "expo-router";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Circle, Path } from "react-native-svg";
@@ -19,6 +20,7 @@ export default function contactUs() {
     Poppins_400Regular,
     Poppins_600SemiBold,
   });
+  const router = useRouter();
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Text style={styles.headerText}> À propos de nous</Text>
@@ -45,6 +47,7 @@ export default function contactUs() {
                   width: "70%",
                 },
               ]}
+              onPress={() => router.push("/allProducts")}
             >
               <Text style={{ color: "white", fontFamily: "Inter_500Medium" }}>
                 Découvrir nos produits
@@ -53,8 +56,9 @@ export default function contactUs() {
             <Pressable
               style={[
                 styles.welcomeButton,
-                { borderWidth: 0, borderColor: "#008236" },
+                { borderWidth: 0.3, borderColor: "#008236" },
               ]}
+              onPress={() => router.push("/contactUs")}
             >
               <Text style={{ color: "#008236", fontFamily: "Inter_500Medium" }}>
                 Contact

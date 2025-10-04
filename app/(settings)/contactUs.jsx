@@ -34,6 +34,7 @@ export default function contactUs() {
   return (
     <SafeAreaView style={{ flex: 1, padding: 15 }}>
       <ScrollView
+        showsVerticalScrollIndicator={false}
         style={{ flex: 1 }}
         contentContainerStyle={{ flexGrow: 1, gap: 15 }}
       >

@@ -32,8 +32,10 @@ export default function OrderDescription() {
         height: 72,
       }}
     >
-      <View style={{ width: "85%" }}>
-        <Text style={[styles.DescriptionText]}>{item.name}</Text>
+      <View style={{ width: "75%" }}>
+        <Text style={[styles.DescriptionText, { width: "70%" }]}>
+          {item.name}
+        </Text>
         <Text style={[styles.DescriptionText, { color: "#4F964F" }]}>
           Quantité : {item.quantity}
         </Text>

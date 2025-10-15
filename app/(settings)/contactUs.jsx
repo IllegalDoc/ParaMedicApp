@@ -40,7 +40,7 @@ export default function contactUs() {
       >
         <Text style={styles.headerText}>Nous Contacter</Text>
         <Svg
-          width={360}
+          width={330}
           height={120}
           viewBox="0 0 400 60"
           style={{ alignSelf: "center" }}
